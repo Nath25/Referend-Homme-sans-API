@@ -32,12 +32,12 @@ class ContactController extends AbstractController
                  $contactMessage");
 
              $mailer->send($message);
-             $this->addFlash('success', "Votre message a bien été envoyé.");
+          //   $this->addFlash('success', "Votre message a bien été envoyé.");
 
              return $this->redirect($url);
          }
 
-         $this->addFlash('danger', "Votre message n'a pas pu être envoyé, veuillez réessayer plus tard.");
+        // $this->addFlash('danger', "Votre message n'a pas pu être envoyé, veuillez réessayer plus tard.");
          return $this->redirectToRoute($url);
      }
 
