@@ -22,12 +22,11 @@ class ContactController extends AbstractController
              $title = $request->request->get('titre');
              $contactMessage = $request->request->get('message');
 
-             $message = (new \Swift_Message('Nouveau message pour Effesceau.'))
+             $message = (new \Swift_Message($title))
                  ->setFrom('effesceau.mairie@outlook.fr')
                  ->setTo('effesceau.mairie@outlook.fr')
                  ->setReplyTo($from)
                  ->setBody("Mail de $nom  $prenom ($from).
-                 Titre du mail : $title.
                  Message :
                  $contactMessage");
 
